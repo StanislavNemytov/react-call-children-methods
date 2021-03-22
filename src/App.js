@@ -9,7 +9,7 @@ function App() {
     <>
       <button
         onClick={() => {
-          refFirstChild && refFirstChild.current.setNewText();
+          refFirstChild && refFirstChild.current.validate();
         }}
       >
         Click

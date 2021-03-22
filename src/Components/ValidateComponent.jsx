@@ -17,7 +17,7 @@ function ValidateComponent({ children }, ref) {
   const [refs, addNewRef] = useState([]);
 
   useImperativeHandle(ref, () => ({
-    setNewText: () => {
+    validate: () => {
       setText((prevState) => (prevState += 1));
     },
   }));
@@ -25,7 +25,7 @@ function ValidateComponent({ children }, ref) {
   const callMethodInEachRef = () => {
     refs.forEach((currentRef) => {
       if (currentRef.current) {
-        currentRef.current.setNewText();
+        currentRef.current.validate();
       }
     });
   };
