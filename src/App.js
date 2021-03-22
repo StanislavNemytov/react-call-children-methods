@@ -21,6 +21,13 @@ function App() {
           <SomeComponent key="some 6">
             <SomeComponent key="some 7">
               <ValidateComponent key="valid 10" />
+              <ValidateComponent key="valid 11" />
+
+              <SomeComponent key="some 8">
+                <SomeComponent key="some 9">
+                  <ValidateComponent key="valid 12" />
+                </SomeComponent>
+              </SomeComponent>
             </SomeComponent>
           </SomeComponent>
         </SomeComponent>
@@ -31,9 +38,15 @@ function App() {
           <ValidateComponent key="valid 3">
             <SomeComponent key="some 4">
               <SomeComponent key="some 5">
+                <SomeComponent key="some 9">
+                  <ValidateComponent key="valid 13" />
+                </SomeComponent>
                 <ValidateComponent key="valid 6" />
                 <ValidateComponent key="valid 7" />
               </SomeComponent>
+            </SomeComponent>
+            <SomeComponent key="some 8">
+              <ValidateComponent key="valid 12" />
             </SomeComponent>
             <ValidateComponent key="valid 8" />
           </ValidateComponent>

@@ -47,24 +47,19 @@ function ValidateComponent({ children }, ref) {
   };
 
   const renderWithChildren = (children, oldRef = null) => {
-    const components = Children.map(children, (child) => {
+    return Children.map(children, (child) => {
       if (isValidElement(child)) {
         const componentRef = oldRef || createRef();
 
-        addNewRef((prevState) => {
-          const checkRef = (refInState) => refInState === componentRef;
-
-          if (prevState && !prevState.some(checkRef)) {
-            return [...prevState, componentRef];
-          }
-        });
+        addNewRef((prevState) => [...prevState, componentRef]);
 
         if (isValidateComponent(child)) {
           return cloneElement(child, { ref: componentRef });
         }
 
         const arrOfRefs = [componentRef];
-        if (child.props.children && child.props.children.length) {
+
+        if (child.props.children) {
           let childrenQuantity = findAllValidateComponents(
             child.props.children
           );
@@ -73,11 +68,7 @@ function ValidateComponent({ children }, ref) {
             arrOfRefs.push(createRef());
           }
 
-          addNewRef((prevState) => {
-            if (prevState) {
-              return [...prevState, ...arrOfRefs.slice(1)];
-            }
-          });
+          addNewRef((prevState) => [...prevState, ...arrOfRefs.slice(1)]);
         }
 
         return cloneElement(child, {
@@ -86,11 +77,15 @@ function ValidateComponent({ children }, ref) {
       }
       return null;
     });
-
-    return <>{components}</>;
   };
 
   const [classes, setClasses] = useState(`rendered-${count}`);
+
+  useEffect(() => {
+    if (refs.length) {
+      console.log("refs", refs);
+    }
+  }, [refs]);
 
   useEffect(() => {
     setClasses("");
