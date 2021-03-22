@@ -15,7 +15,7 @@ export default function SomeComponent({ children, childRef }) {
         })}
       </>
     );
-  }, [children]);
+  }, [children, childRef]);
 
   return (
     <div className="some-component" style={{ padding: 24 }}>
