@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: black;
+}
+
+p {
+  margin: 0;
+}
+
+.val-com {
+  background: rgb(136, 184, 187) !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.some-component {
+  border: 1px solid red !important;
+}
+
+div>div {
+  background: gray;
+}
+
+div>div>div {
+  background: lightgray;
+}
+
+div>div>div>div {
+  background: darkgray;
+}
+
+div>div>div>div>div {
+  background: lightgray;
+}
+
+div>div>div>div>div>div {
+  background: darkgray;
+}
+
+div:not(:last-of-type) {
+  border-bottom: 1px solid white;
+}
+
+[class^="rendered-"] {
+  animation: changed .25s forwards;
+}
+
+@keyframes changed {
+  from {
+    background: rgba(255, 0, 0, .5);
+  }
+
+  to {
+    background: transparent;
+  }
 }
