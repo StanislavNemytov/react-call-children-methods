@@ -69,8 +69,6 @@ function ValidateComponent({ children }, ref) {
             child.props.children
           );
 
-          console.log(childrenQuantity);
-
           while ((childrenQuantity -= 1) >= 0) {
             arrOfRefs.push(createRef());
           }
@@ -93,12 +91,6 @@ function ValidateComponent({ children }, ref) {
   };
 
   const [classes, setClasses] = useState(`rendered-${count}`);
-
-  useEffect(() => {
-    if (refs.length) {
-      console.log("refs", refs);
-    }
-  }, [refs]);
 
   useEffect(() => {
     setClasses("");
