@@ -91,6 +91,7 @@ function ValidateComponent({ children }, ref) {
     }, 25);
   }, [classes, count]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const withChildren = useMemo(() => renderWithChildren(children), [children]);
 
   return (
