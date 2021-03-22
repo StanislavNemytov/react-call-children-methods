@@ -2,7 +2,6 @@ import React, { Children, cloneElement, isValidElement, useMemo } from "react";
 import isValidateComponent from "../helper";
 
 export default function SomeComponent({ children, childRef }) {
-  console.log("🚀 childRef.length", childRef.length);
   const renderChildren = useMemo(() => {
     return (
       <>
@@ -24,7 +23,7 @@ export default function SomeComponent({ children, childRef }) {
   }, [children, childRef]);
 
   return (
-    <div className="some-component" style={{ padding: 24 }}>
+    <div className="some-component" style={{ padding: 4 }}>
       {children && renderChildren}
     </div>
   );

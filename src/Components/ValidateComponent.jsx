@@ -82,12 +82,6 @@ function ValidateComponent({ children }, ref) {
   const [classes, setClasses] = useState(`rendered-${count}`);
 
   useEffect(() => {
-    if (refs.length) {
-      console.log("refs", refs);
-    }
-  }, [refs]);
-
-  useEffect(() => {
     setClasses("");
   }, [count]);
 
@@ -100,7 +94,7 @@ function ValidateComponent({ children }, ref) {
   const withChildren = useMemo(() => renderWithChildren(children), [children]);
 
   return (
-    <div className="val-com" style={{ padding: 24 }}>
+    <div className="val-com" style={{ padding: 4 }}>
       {(children && refs && refs.length && (
         <p>
           <button onClick={callMethodInEachRef}>Big Click</button>
